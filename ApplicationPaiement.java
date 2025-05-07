@@ -7,7 +7,7 @@ interface Paiement {
 class CarteBancaire implements Paiement {
     @Override
     public void payer(double montant) {
-        System.out.println("💳 Paiement de " + montant + " MAD par carte bancaire.");
+        System.out.println("💳 Paiement de :" + montant + " MAD par carte bancaire.");
     }
 }
 
@@ -15,7 +15,7 @@ class CarteBancaire implements Paiement {
 class PayPal implements Paiement {
     @Override
     public void payer(double montant) {
-        System.out.println("🅿️ Paiement de " + montant + " MAD via PayPal.");
+        System.out.println("🅿️ Paiement de :" + montant + " MAD via PayPal.");
     }
 }
 
