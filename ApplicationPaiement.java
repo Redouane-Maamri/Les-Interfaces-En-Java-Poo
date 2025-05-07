@@ -34,6 +34,13 @@ class Bitcoin implements Paiement {
     }
 }
 
+class AmericanExpress implements Paiement{
+    @Override
+    public void payer(double montant){
+        System.out.println("Paiement By  : " + montant + "$ en American Express");
+    }
+}
+
 // Classe principale avec polymorphisme
 public class ApplicationPaiement {
 
@@ -47,11 +54,13 @@ public class ApplicationPaiement {
         Paiement paypal = new PayPal();
         Paiement crypto = new CryptoMonnaie();
         Paiement bitcoin=new Bitcoin();
+        Paiement american=new AmericanExpress();
 
         // Utilisation du polymorphisme
         traiterPaiement(cb, 200);
         traiterPaiement(paypal, 150);
         traiterPaiement(crypto, 300);
         traiterPaiement(bitcoin, 8000);
+        traiterPaiement(american, 100000);
     }
 }
